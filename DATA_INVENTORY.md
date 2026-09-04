@@ -1,7 +1,7 @@
 # Released data inventory
 
-The package contains 254 result/data files (about 86 MiB) selected solely by
-the active paper-figure pipelines.
+The package contains 476 result/data files (about 88 MiB) selected solely by
+the active paper-figure and claim-support pipelines.
 
 | Data area | Purpose | Scope |
 |---|---|---|
@@ -13,6 +13,11 @@ the active paper-figure pipelines.
 | `results/nsga2/main15/` | finite-budget Pareto figure | completed seed-11 metadata, evaluations, and Pareto front |
 | `results/nsga2/sensitivity/` | optimizer-parameter sensitivity | 15,000 agents; 7 settings × 3 seeds; DONE, Hypervolume, and Pareto files |
 | `results/physical_optimization_sensitivity/paper_runs_8000/` | physical/crowd-model sensitivity | 8,000 agents; 13 settings × 3 seeds; files directly read by the analysis |
+| `results/nsga2/sensitivity_50000_clearance80/` | controlled scale-up optimizer screen | 50,000 agents; 80% clearance target; 7 settings × 3 seeds; 240 calls per run; one warm-start candidate per run |
+| `results/physical_optimization_sensitivity/runs_50000_clearance80/` | controlled scale-up physical screen | 50,000 agents; 80% clearance target; 13 settings × 3 seeds; 24 calls per run; 12-member supplied initial population |
+| `results/physical_optimization_sensitivity/warm_starts_15d.json` | provenance for the supplied physical-screen candidates | identifies the R3–R13 candidate retained in the controlled screen |
+| `results/runtime/scaling_timing_260624.csv` | runtime-scaling table | two recorded repetitions for each tested population size |
+| `results/CONTROLLED_SCREEN_PROTOCOL.json` | machine-readable evidence boundary | distinguishes the 80% warm-started screens from the separate 95% paired verification |
 
 Large native simulator layers are not released. The congestion archive retains
 the road mask and aggregated cumulative-density/congestion values needed for a
@@ -21,3 +26,6 @@ full-resolution layer export.
 
 No failed or unfinished run is counted as completed evidence. In particular,
 the main 15-segment Pareto release contains only the completed seed-11 run.
+The 50,000-agent controlled screens preserve every completed run and are
+reported as warm-started retention/finite-budget evidence, not as independent
+rediscovery or as a causal test of population scale.

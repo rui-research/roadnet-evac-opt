@@ -63,6 +63,10 @@ def main() -> None:
         "--suffix", default="",
         help="suffix inserted before .csv/.png/.pdf so prior paper artifacts are preserved",
     )
+    parser.add_argument(
+        "--tables-only", action="store_true",
+        help="write run and summary tables without creating a figure",
+    )
     args = parser.parse_args()
 
     def artifact(directory: Path, stem: str, extension: str) -> Path:
@@ -113,6 +117,10 @@ def main() -> None:
         })
     summary = pd.DataFrame(summary_rows)
     summary.to_csv(artifact(TABLES, "TableR_C5_nsga2_sensitivity_summary", "csv"), index=False)
+
+    if args.tables_only:
+        print(f"processed {len(runs)} runs and {len(summary)} OFAT settings (tables only)")
+        return
 
     plt.style.use("ggplot")
     plt.rcParams.update({

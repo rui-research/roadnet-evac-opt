@@ -1,2 +1,5 @@
 # Preserve released result files byte-for-byte so MANIFEST.sha256 remains portable.
 * -text
+*.pdf binary
+*.png binary
+*.npz binary

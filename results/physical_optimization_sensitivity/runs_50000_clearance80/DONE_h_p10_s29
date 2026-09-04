@@ -1,0 +1,24 @@
+{
+  "tag": "h_p10_s29",
+  "seed": 29,
+  "optimizer_seed": 29,
+  "pedestrian_seed": 29,
+  "initial_positions_source": "initial_positions/seed_29_N50000.csv",
+  "initial_positions_sha256": "ee8d8e02a807d23dc89e01c4fc354ffd498b16773f5ca3b910f2ab67d95897e4",
+  "persisted_initial_positions": null,
+  "genes": 15,
+  "population": 12,
+  "offspring_batches": 1,
+  "simulator_calls": 24,
+  "crowd": 50000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 1373.728,
+  "front0": 12,
+  "warm_start_count": 12,
+  "cost_definition": "building-demolition/land-take proxy"
+}

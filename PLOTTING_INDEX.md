@@ -22,6 +22,24 @@ references. The commented graphical-abstract placeholder is excluded.
 
 `plotting/run_all.py` executes these dependencies in a stable order. The
 generated names exactly match the corresponding active manuscript filenames.
+The paper keeps the canonical final renderings under `manuscript/fig/`; the
+portable regenerated files are evidence-aligned outputs and do not overwrite
+those canonical assets.
+
+## Claim-support tables
+
+These two additional analysis pipelines regenerate three groups of numerical
+tables cited by the manuscript without adding unrelated figures:
+
+| Output | Pipeline | Released input |
+|---|---|---|
+| 50,000-agent physical-screen tables | `analyze_c5_50000_clearance80.py` | `results/physical_optimization_sensitivity/runs_50000_clearance80/` |
+| 50,000-agent NSGA-II screen tables | `analyze_c5_50000_clearance80.py` | `results/nsga2/sensitivity_50000_clearance80/` |
+| runtime-scaling table | `analyze_runtime_scaling.py` | `results/runtime/scaling_timing_260624.csv` |
+
+The 50,000-agent screens use an 80% clearance stopping target and warm starts.
+They are intentionally kept separate from the 95% paired village-scale
+verification and do not support an independent-rediscovery claim.
 
 ## Preserved source/assembled manuscript assets
 

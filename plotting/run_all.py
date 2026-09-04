@@ -23,6 +23,8 @@ PIPELINES = [
     "plot_c2_pareto_15d.py",
     "plot_c5_physical_optimization_sensitivity.py",
     "plot_c5_nsga2_sensitivity.py",
+    "analyze_c5_50000_clearance80.py",
+    "analyze_runtime_scaling.py",
 ]
 
 

@@ -22,6 +22,10 @@ PARSER.add_argument(
     "--suffix", default="",
     help="suffix inserted before .csv/.png/.pdf so prior paper artifacts are preserved",
 )
+PARSER.add_argument(
+    "--tables-only", action="store_true",
+    help="write run and summary tables without creating figures",
+)
 ARGS = PARSER.parse_args()
 RUNS = ARGS.input
 TABLES = GENERATED_TABLES
@@ -245,6 +249,10 @@ for scenario in ORDER:
     width_rows.append(record)
 widths = pd.DataFrame(width_rows)
 widths.to_csv(artifact(TABLES, "TableR_C5_physical_optimization_widths", "csv"), index=False)
+
+if ARGS.tables_only:
+    print(f"processed {len(runs)} completed physical-sensitivity runs (tables only)")
+    raise SystemExit(0)
 
 plt.rcParams.update(
     {

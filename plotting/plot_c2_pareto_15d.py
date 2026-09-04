@@ -141,8 +141,14 @@ def main() -> None:
     fig, ax = plt.subplots(figsize=(9.2, 6.6))
     for seed, group in candidates.groupby("seed"):
         ax.scatter(group.cost, group.evac, s=30, alpha=0.35, label=f"seed {seed}")
+    completed_seeds = sorted(candidates.seed.unique())
+    front_label = (
+        f"Seed-{completed_seeds[0]} nondominated approximation"
+        if len(completed_seeds) == 1
+        else "Merged nondominated approximation"
+    )
     ax.plot(merged.cost, merged.evac, "-o", color="crimson", lw=2, ms=4,
-            label="Merged nondominated approximation")
+            label=front_label)
     ax.scatter([ideal.cost], [ideal.evac], marker="*", s=260, color="gold",
                edgecolor="black", zorder=5, label="Ideal-point compromise")
     styles = {
@@ -209,8 +215,8 @@ def main() -> None:
             },
             zorder=8,
         )
-    ax.set_xlabel("Building-demolition / land-take cost proxy", fontsize=18)
-    ax.set_ylabel("Evacuation score", fontsize=18)
+    ax.set_xlabel(r"Reconstruction cost, $F_{\mathrm{cost}}$ (relative units)", fontsize=18)
+    ax.set_ylabel(r"Evacuation score, $F_{\mathrm{evac}}$ (s)", fontsize=18)
     ax.tick_params(axis="both", labelsize=15)
     ax.margins(x=0.07, y=0.15)
     ax.legend(fontsize=13, loc="upper right")

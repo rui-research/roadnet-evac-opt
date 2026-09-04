@@ -1,0 +1,21 @@
+{
+  "physical_parameter_screen_50000": {
+    "clearance_target": 0.8,
+    "crowd": 50000,
+    "scenarios": 13,
+    "seeds": [11, 29, 47],
+    "simulator_calls_per_scenario_seed": 24,
+    "initial_population_size": 12,
+    "warm_start_file": "physical_optimization_sensitivity/warm_starts_15d.json",
+    "interpretation": "retention test for a supplied R3-R13 candidate, not independent rediscovery"
+  },
+  "nsga2_parameter_screen_50000": {
+    "clearance_target": 0.8,
+    "crowd": 50000,
+    "configurations": 7,
+    "seeds": [11, 29, 47],
+    "simulator_calls_per_configuration_seed": 240,
+    "warm_start_count_per_run": 1,
+    "interpretation": "finite-budget objective-space screen; complete segment sets are non-unique"
+  }
+}

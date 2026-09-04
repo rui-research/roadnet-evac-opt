@@ -1,0 +1,24 @@
+{
+  "tag": "k_m10_s11",
+  "seed": 11,
+  "optimizer_seed": 11,
+  "pedestrian_seed": 11,
+  "initial_positions_source": "initial_positions/seed_11_N50000.csv",
+  "initial_positions_sha256": "a250ec47bf9470c930782f6f7ab1fa582be4b4df73b4c370954425c7d5807517",
+  "persisted_initial_positions": null,
+  "genes": 15,
+  "population": 12,
+  "offspring_batches": 1,
+  "simulator_calls": 24,
+  "crowd": 50000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 1336.27,
+  "front0": 12,
+  "warm_start_count": 12,
+  "cost_definition": "building-demolition/land-take proxy"
+}
