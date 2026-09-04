@@ -10,7 +10,9 @@ Reproducibility materials for the paper:
 **Maintainer:** [Chun Song](https://chun-song.com) · [GitHub: Shyr0796](https://github.com/Shyr0796)<br>
 **Repository:** [rui-research/roadnet-evac-opt](https://github.com/rui-research/roadnet-evac-opt)
 
-![Simulation–optimization framework](manuscript/fig/framework.png)
+![Simulation–optimization framework](assets/framework_ceus_preview.png)
+
+[View the vector PDF used in the manuscript](manuscript/fig/framework_ceus.pdf).
 
 ## What is included
 

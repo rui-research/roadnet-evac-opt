@@ -31,7 +31,7 @@ claimed to be regenerated from released numerical data:
 | Manuscript asset | Role |
 |---|---|
 | `shipai_street_view.png` | case-study context |
-| `framework.png` | simulation–optimization framework |
+| `framework_ceus.pdf` | simulation–optimization framework |
 | `BFS.png` | navigation-field method illustration |
 | `paradigm_obs.png` | empirical relationship cited by the manuscript |
 | `shipai_seli.png` | assembled study-area map |
