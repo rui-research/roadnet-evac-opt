@@ -1,0 +1,18 @@
+{
+  "tag": "main15_s11",
+  "seed": 11,
+  "genes": 15,
+  "population": 40,
+  "offspring_batches": 25,
+  "simulator_calls": 1040,
+  "crowd": 50000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 21824.565,
+  "front0": 39,
+  "cost_definition": "building-demolition/land-take proxy"
+}

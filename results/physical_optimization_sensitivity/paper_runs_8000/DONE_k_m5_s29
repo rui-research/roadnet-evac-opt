@@ -1,0 +1,19 @@
+{
+  "tag": "k_m5_s29",
+  "seed": 29,
+  "genes": 15,
+  "population": 12,
+  "offspring_batches": 1,
+  "simulator_calls": 24,
+  "crowd": 8000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    1000.0,
+    6000.0
+  ],
+  "wall_seconds": 360.046,
+  "front0": 10,
+  "warm_start_count": 12,
+  "cost_definition": "building-demolition/land-take proxy"
+}

@@ -1,0 +1,18 @@
+{
+  "tag": "mut004_s47",
+  "seed": 47,
+  "genes": 15,
+  "population": 40,
+  "offspring_batches": 5,
+  "simulator_calls": 240,
+  "crowd": 15000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.04,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 2176.867,
+  "front0": 11,
+  "cost_definition": "building-demolition/land-take proxy"
+}

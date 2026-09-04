@@ -1,0 +1,18 @@
+{
+  "tag": "cx095_s29",
+  "seed": 29,
+  "genes": 15,
+  "population": 40,
+  "offspring_batches": 5,
+  "simulator_calls": 240,
+  "crowd": 15000,
+  "crossover": 0.95,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 2163.906,
+  "front0": 10,
+  "cost_definition": "building-demolition/land-take proxy"
+}

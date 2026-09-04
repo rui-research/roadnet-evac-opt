@@ -1,0 +1,18 @@
+{
+  "tag": "pop20_s29",
+  "seed": 29,
+  "genes": 15,
+  "population": 20,
+  "offspring_batches": 11,
+  "simulator_calls": 240,
+  "crowd": 15000,
+  "crossover": 0.8,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 2222.05,
+  "front0": 19,
+  "cost_definition": "building-demolition/land-take proxy"
+}

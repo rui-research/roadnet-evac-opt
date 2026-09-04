@@ -1,0 +1,18 @@
+{
+  "tag": "cx060_s47",
+  "seed": 47,
+  "genes": 15,
+  "population": 40,
+  "offspring_batches": 5,
+  "simulator_calls": 240,
+  "crowd": 15000,
+  "crossover": 0.6,
+  "mutation_per_gene": 0.08,
+  "hv_reference": [
+    2000.0,
+    6000.0
+  ],
+  "wall_seconds": 2222.692,
+  "front0": 14,
+  "cost_definition": "building-demolition/land-take proxy"
+}
