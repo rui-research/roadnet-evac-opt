@@ -1,11 +1,12 @@
-# Paper figure map
+# Released figure and table map
 
-The authoritative source is `manuscript/CEUS.tex`. It contains 21 active figure
-references. The commented graphical-abstract placeholder is excluded.
+The repository does not distribute the manuscript source or final manuscript
+assets. The mapping below records the 12 data-derived paper figures retained for
+portable regeneration.
 
-## Data-derived manuscript figures
+## Data-derived paper figures
 
-| Manuscript asset | Plotting pipeline | Released input |
+| Generated figure | Plotting pipeline | Released input |
 |---|---|---|
 | `paradigm_passage_sim.png` | `plot_legacy_fundamental_diagram.py` | `results/legacy/fundamental_frames/*.csv` |
 | `hist_time_distance.png` | `plot_legacy_evacuation_hist.py` | `results/legacy/baseline_run_record.csv` |
@@ -20,16 +21,13 @@ references. The commented graphical-abstract placeholder is excluded.
 | `FigR_C5_physical_optimization_sensitivity.pdf` | `plot_c5_physical_optimization_sensitivity.py` | same 8,000-agent OFAT data |
 | `FigR_C5_nsga2_parameter_sensitivity.pdf` | `plot_c5_nsga2_sensitivity.py` | `results/nsga2/sensitivity/` (15,000 agents) |
 
-`plotting/run_all.py` executes these dependencies in a stable order. The
-generated names exactly match the corresponding active manuscript filenames.
-The paper keeps the canonical final renderings under `manuscript/fig/`; the
-portable regenerated files are evidence-aligned outputs and do not overwrite
-those canonical assets.
+`plotting/run_all.py` executes these dependencies in a stable order. Outputs are
+written to `figures/generated/`.
 
 ## Claim-support tables
 
 These two additional analysis pipelines regenerate three groups of numerical
-tables cited by the manuscript without adding unrelated figures:
+tables supporting the paper without adding unrelated figures:
 
 | Output | Pipeline | Released input |
 |---|---|---|
@@ -40,20 +38,3 @@ tables cited by the manuscript without adding unrelated figures:
 The 50,000-agent screens use an 80% clearance stopping target and warm starts.
 They are intentionally kept separate from the 95% paired village-scale
 verification and do not support an independent-rediscovery claim.
-
-## Preserved source/assembled manuscript assets
-
-These nine active figures are preserved as final paper assets and are not
-claimed to be regenerated from released numerical data:
-
-| Manuscript asset | Role |
-|---|---|
-| `shipai_street_view.png` | case-study context |
-| `framework_ceus.pdf` | simulation–optimization framework |
-| `BFS.png` | navigation-field method illustration |
-| `paradigm_obs.png` | empirical relationship cited by the manuscript |
-| `shipai_seli.png` | assembled study-area map |
-| `Snipaste_2025-12-11_19-43-55.png` | road-network/potential-field layout |
-| `simulation_process_1.png` | simulation snapshots, part 1 |
-| `simulation_process_2.png` | simulation snapshots, part 2 |
-| `micro_reconstructed_area.png` | assembled candidate-road map |

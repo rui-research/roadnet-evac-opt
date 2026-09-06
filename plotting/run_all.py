@@ -1,4 +1,4 @@
-"""Regenerate only the data-derived figures that are active in CEUS.tex."""
+"""Regenerate the released data-derived paper figures and support tables."""
 
 from __future__ import annotations
 

@@ -7,7 +7,6 @@ import hashlib
 import csv
 import json
 import os
-import re
 import stat
 import sys
 from pathlib import Path
@@ -17,6 +16,7 @@ ROOT = Path(__file__).resolve().parent
 FORBIDDEN_SUFFIXES = {
     ".c", ".cc", ".cpp", ".cxx", ".h", ".hh", ".hpp", ".hxx", ".cu", ".cuh",
     ".o", ".obj", ".a", ".so", ".dll", ".dylib", ".exe", ".bin", ".vtk", ".pyc",
+    ".tex", ".bib",
 }
 MAGIC_PREFIXES = (
     b"\x7fELF", b"MZ", b"\xfe\xed\xfa\xce", b"\xfe\xed\xfa\xcf",
@@ -76,14 +76,14 @@ def main() -> int:
     all_files = files()
 
     for required in (
-        ROOT / "manuscript" / "CEUS.tex",
-        ROOT / "manuscript" / "CEUS.pdf",
         ROOT / "plotting" / "run_all.py",
         ROOT / "plotting" / "common_paths.py",
         ROOT / "results",
         ROOT / "figures" / "generated",
     ):
         check(required.exists(), f"missing required path: {required.relative_to(ROOT)}", errors)
+    check(not (ROOT / "manuscript").exists(),
+          "manuscript directory must not be included in the public release", errors)
 
     for path in all_files:
         rel = path.relative_to(ROOT)
@@ -110,24 +110,6 @@ def main() -> int:
         if path.name not in {"common_paths.py"}:
             content = path.read_text(encoding="utf-8")
             check("common_paths" in content, f"script bypasses common_paths: {path.name}", errors)
-
-    tex_raw = (ROOT / "manuscript" / "CEUS.tex").read_text(encoding="utf-8", errors="replace")
-    tex = "\n".join(line.split("%", 1)[0] for line in tex_raw.splitlines())
-    figure_refs = re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", tex)
-    for ref in figure_refs:
-        candidate = ROOT / "manuscript" / ref
-        if candidate.suffix:
-            exists = candidate.exists()
-        else:
-            exists = any(candidate.with_suffix(suffix).exists() for suffix in (".pdf", ".png", ".jpg", ".jpeg"))
-        check(exists, f"missing manuscript figure: {ref}", errors)
-
-    active_names = {Path(ref).name for ref in figure_refs}
-    manuscript_names = {path.name for path in (ROOT / "manuscript" / "fig").iterdir() if path.is_file()}
-    check(len(figure_refs) == 21, f"expected 21 active manuscript references, found {len(figure_refs)}", errors)
-    check(manuscript_names == active_names,
-          f"manuscript/fig differs from active references: extra={sorted(manuscript_names-active_names)}, missing={sorted(active_names-manuscript_names)}",
-          errors)
 
     generated_figures = [path for path in (ROOT / "figures" / "generated").glob("*") if path.is_file()]
     generated_tables = list((ROOT / "generated" / "tables").glob("*.csv"))
@@ -242,10 +224,6 @@ def main() -> int:
                 check(abs(float(runtime_rows[crowd]["wall_mean_s"]) - expected_mean) < 1e-9,
                       f"runtime mean mismatch for crowd={crowd}", errors)
 
-    check("80\\% clearance stopping target" in tex_raw and "warm-start" in tex_raw and
-          "95\\%-clearance paired village-scale verification" in tex_raw,
-          "manuscript does not preserve the 80%-versus-95% clearance and warm-start boundary", errors)
-
     manifest = ROOT / "MANIFEST.sha256"
     if manifest.exists():
         for line_number, line in enumerate(manifest.read_text(encoding="utf-8").splitlines(), 1):
@@ -266,8 +244,8 @@ def main() -> int:
     print(
         "RELEASE_VALIDATION_PASS "
         f"files={len(all_files)} plotting_scripts={len(plotting_scripts)} "
-        f"manuscript_fig_refs={len(figure_refs)} generated_figures={len(generated_figures)} "
-        f"generated_tables={len(generated_tables)}"
+        f"generated_figures={len(generated_figures)} generated_tables={len(generated_tables)} "
+        "manuscript_included=no"
     )
     return 0
 
