@@ -1,6 +1,6 @@
 # Validation record
 
-Validation date: 2026-09-04.
+Validation date: 2026-09-06.
 
 The code-and-data release was checked after removal of the manuscript package.
 

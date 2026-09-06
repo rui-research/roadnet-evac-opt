@@ -92,11 +92,14 @@ sha256sum -c MANIFEST.sha256
 See [VALIDATION.md](VALIDATION.md) for the recorded checks and
 [DATA_INVENTORY.md](DATA_INVENTORY.md) for the released-data scope.
 
-## Citation
-
-Please cite the paper title above. Add the final journal citation and DOI from
-the publisher record when available; this repository does not guess them.
+中文说明：本仓库不发布论文 TeX 源文件、编译稿、参考文献库和正式论文图片；仅保留数据图重绘代码、必要源数据、生成结果及复现说明。个人主页：[Chun Song](https://chun-song.com)；个人 GitHub：[Shyr0796](https://github.com/Shyr0796)。
 
 ---
 
-中文说明：本仓库不发布论文 TeX 源文件、编译稿、参考文献库和正式论文图片；仅保留数据图重绘代码、必要源数据、生成结果及复现说明。个人主页：[Chun Song](https://chun-song.com)；个人 GitHub：[Shyr0796](https://github.com/Shyr0796)。
+## Publication
+
+**Title:** A novel simulation-based approach to optimizing road networks for disaster evacuation in dense urban informal settlements
+
+**Article:** [ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0198971526001122) · [DOI](https://doi.org/10.1016/j.compenvurbsys.2026.102510)
+
+**Recommended citation:** C. Song, Z. Zhou, R. Cao, A novel simulation-based approach to optimizing road networks for disaster evacuation in dense urban informal settlements, *Computers, Environment and Urban Systems* 131 (2027) 102510. https://doi.org/10.1016/j.compenvurbsys.2026.102510.
